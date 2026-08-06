@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investing in My Future — HP Victus 15 RTX 4050</title>
+
+  <!-- Google Fonts: Syne (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─────────────────────────────────────────────
+       CSS CUSTOM PROPERTIES (Design Tokens)
+    ───────────────────────────────────────────── */
+    :root {
+      --bg-deep:    #080a0f;
+      --bg-card:    #0e1118;
+      --bg-glass:   rgba(255,255,255,0.04);
+      --border:     rgba(255,255,255,0.08);
+      --accent:     #3b82f6;       /* electric blue */
+      --accent-2:   #06b6d4;       /* cyan highlight */
+      --accent-glow:rgba(59,130,246,0.25);
+      --text-1:     #f0f4ff;
+      --text-2:     #8b9ab5;
+      --text-3:     #4a5568;
+      --red:        #ef4444;
+      --green:      #22c55e;
+      --gold:       #f59e0b;
+      --font-display: 'Syne', sans-serif;
+      --font-body:    'DM Sans', sans-serif;
+      --radius:     16px;
+      --radius-sm:  10px;
+      --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ─────────────────────────────────────────────
+       RESET & BASE
+    ───────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg-deep);
+      color: var(--text-1);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ─────────────────────────────────────────────
+       NOISE TEXTURE OVERLAY (subtle grain)
+    ───────────────────────────────────────────── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.4;
+    }
+
+    /* ─────────────────────────────────────────────
+       NAV
+    ───────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 68px;
+      background: rgba(8,10,15,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: var(--transition);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--accent);
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-2);
+      transition: color var(--transition);
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0; right: 0;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transition: transform var(--transition);
+    }
+    .nav-links a:hover { color: var(--text-1); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+
+    /* Hamburger for mobile */
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: var(--text-1);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    /* ─────────────────────────────────────────────
+       SECTION WRAPPERS
+    ───────────────────────────────────────────── */
+    section {
+      min-height: 100vh;
+      padding: 120px clamp(1.5rem, 6vw, 6rem) 80px;
+      position: relative;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* ─────────────────────────────────────────────
+       TYPOGRAPHY UTILITIES
+    ───────────────────────────────────────────── */
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
+    h1 { font-size: clamp(2.4rem, 6vw, 4.2rem); font-weight: 800; }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 700; }
+    h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; }
+    p { color: var(--text-2); max-width: 65ch; }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #f0f4ff 0%, var(--accent) 60%, var(--accent-2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─────────────────────────────────────────────
+       BUTTONS
+    ───────────────────────────────────────────── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 9999px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 24px var(--accent-glow);
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+      box-shadow: 0 0 36px rgba(59,130,246,0.45);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-2);
+    }
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text-1);
+      transform: translateY(-2px);
+    }
+
+    /* ─────────────────────────────────────────────
+       REVEAL ANIMATION (Intersection Observer)
+    ───────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ─────────────────────────────────────────────
+       GLASS CARDS
+    ───────────────────────────────────────────── */
+    .card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top left, rgba(59,130,246,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .card:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(59,130,246,0.1);
+    }
+
+    /* ─────────────────────────────────────────────
+       DIVIDER
+    ───────────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 4rem 0;
+    }
+
+    /* ─────────────────────────────────────────────
+       ═══════════════════════════════════════════
+       PAGE 1 — HERO
+       ═══════════════════════════════════════════
+    ───────────────────────────────────────────── */
+    #home {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 100px;
+      overflow: hidden;
+    }
+
+    /* Animated background orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+    .orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(59,130,246,0.18), transparent 70%);
+      top: -100px; right: -100px;
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(6,182,212,0.12), transparent 70%);
+      bottom: 100px; left: -80px;
+      animation-delay: -5s;
+    }
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(30px, 20px) scale(1.05); }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(59,130,246,0.3);
+      background: rgba(59,130,246,0.08);
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .hero-badge .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .hero-title { margin-bottom: 1.2rem; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-2);
+      max-width: 48ch;
+      margin-bottom: 2.2rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    /* Laptop comparison visual */
+    .laptop-compare {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .laptop-card {
+      padding: 1.4rem 1.6rem;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .laptop-card.old {
+      background: rgba(239,68,68,0.04);
+      border-color: rgba(239,68,68,0.15);
+    }
+    .laptop-card.new {
+      background: rgba(59,130,246,0.04);
+      border-color: rgba(59,130,246,0.2);
+    }
+    .laptop-card .lc-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .laptop-card.old .lc-label { color: var(--red); }
+    .laptop-card.new .lc-label { color: var(--accent); }
+    .laptop-card .lc-name {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+    .spec-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .spec-pill {
+      font-size: 0.72rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 9999px;
+      border: 1px solid;
+    }
+    .old .spec-pill { border-color: rgba(239,68,68,0.25); color: #f87171; background: rgba(239,68,68,0.06); }
+    .new .spec-pill { border-color: rgba(59,130,246,0.25); color: #93c5fd; background: rgba(59,130,246,0.06); }
+
+    .vs-badge {
+      text-align: center;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1rem;
+      color: var(--text-3);
+      position: relative;
+    }
+    .vs-badge::before, .vs-badge::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: var(--border);
+    }
+    .vs-badge::before { left: 0; }
+    .vs-badge::after  { right: 0; }
+
+    /* Performance bar */
+    .perf-row {
+      margin-top: 1.5rem;
+    }
+    .perf-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-2);
+      margin-bottom: 0.4rem;
+    }
+    .perf-bar {
+      height: 6px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .perf-fill {
+      height: 100%;
+      border-radius: 99px;
+      transition: width 1.4s cubic-bezier(0.4,0,0.2,1) 0.3s;
+      width: 0;
+    }
+    .perf-fill.blue  { background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+    .perf-fill.red   { background: var(--red); }
+
+    /* ─────────────────────────────────────────────
+       PAGE 2 — WHY UPGRADE
+    ───────────────────────────────────────────── */
+    #why {
+      background: linear-gradient(180deg, var(--bg-deep), #070910);
+    }
+    .why-header { margin-bottom: 3.5rem; }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .problem-card {
+      background: rgba(239,68,68,0.04);
+      border: 1px solid rgba(239,68,68,0.12);
+      border-radius: var(--radius);
+      padding: 1.6rem;
+      transition: var(--transition);
+      position: relative;
+    }
+    .problem-card:hover {
+      border-color: rgba(239,68,68,0.3);
+      transform: translateY(-4px);
+    }
+    .problem-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: rgba(239,68,68,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+    .problem-card h3 { margin-bottom: 0.5rem; font-size: 1rem; }
+    .problem-card p { font-size: 0.87rem; max-width: none; }
+
+    /* Scenario timeline */
+    .scenario-section { margin-top: 3rem; }
+    .scenario-section h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1.8rem;
+      color: var(--text-1);
+    }
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--red), transparent);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2rem 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 6px;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 10px rgba(239,68,68,0.5);
+    }
+    .timeline-item .ti-time {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--red);
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+    .timeline-item h4 { font-family: var(--font-display); font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .timeline-item p { font-size: 0.85rem; max-width: none; }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .stat-box {
+      text-align: center;
+      padding: 1.6rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-glass);
+    }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--red);
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    .stat-label { font-size: 0.78rem; color: var(--text-2); }
+
+    /* ─────────────────────────────────────────────
+       PAGE 3 — GROWTH
+    ───────────────────────────────────────────── */
+    #growth {
+      background: linear-gradient(180deg, #070910, var(--bg-deep));
+    }
+    .growth-intro { margin-bottom: 3.5rem; }
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .use-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .use-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.5s ease;
+    }
+    .use-card:hover { border-color: rgba(59,130,246,0.2); transform: translateY(-4px); }
+    .use-card:hover::after { transform: scaleX(1); }
+    .use-icon {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    .use-card h3 { margin-bottom: 0.5rem; }
+    .use-card p { font-size: 0.87rem; max-width: none; }
+    .tag-list {
+      display: flex; flex-wrap: wrap; gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    .tag {
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(59,130,246,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+
+    /* Career roadmap */
+    .roadmap { margin-top: 3rem; }
+    .roadmap h3 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+    .roadmap-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .roadmap-track::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+    .roadmap-step {
+      text-align: center;
+      padding: 0 0.5rem;
+      position: relative;
+    }
+    .roadmap-step .step-dot {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin: 20px auto 1rem;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    .roadmap-step .step-title { font-size: 0.8rem; font-weight: 600; margin-bottom: 0.3rem; }
+    .roadmap-step .step-desc { font-size: 0.72rem; color: var(--text-2); }
+
+    /* Quote block */
+    .quote-block {
+      margin: 3rem 0 0;
+      padding: 2rem 2.5rem;
+      border-left: 3px solid var(--accent);
+      background: rgba(59,130,246,0.04);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .quote-block p {
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-1);
+      max-width: none;
+    }
+    .quote-block .quote-attr {
+      margin-top: 0.8rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    /* ─────────────────────────────────────────────
+       PAGE 4 — BALANCE
+    ───────────────────────────────────────────── */
+    #balance {
+      background: linear-gradient(180deg, var(--bg-deep), #060810);
+    }
+    .balance-intro { margin-bottom: 3rem; }
+
+    /* Pie chart (CSS only) */
+    .balance-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 3rem;
+    }
+    .pie-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .pie {
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--accent) 0%    75%,
+        #1e293b       75%   85%,
+        var(--green)  85%  100%
+      );
+      position: relative;
+      box-shadow: 0 0 40px rgba(59,130,246,0.2);
+      transition: transform 0.4s ease;
+    }
+    .pie:hover { transform: scale(1.05) rotate(5deg); }
+    .pie-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      width: 100%;
+    }
+    .pie-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-size: 0.85rem;
+    }
+    .legend-dot {
+      width: 12px; height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .balance-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .balance-point {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.2rem;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-glass);
+      transition: var(--transition);
+    }
+    .balance-point:hover { border-color: rgba(59,130,246,0.25); }
+    .bp-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .bp-content h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+    .bp-content p { font-size: 0.83rem; max-width: none; }
+
+    /* Commitment section */
+    .commitment {
+      margin-top: 3rem;
+      padding: 2.5rem;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(59,130,246,0.06), rgba(6,182,212,0.04));
+      border: 1px solid rgba(59,130,246,0.15);
+      text-align: center;
+    }
+    .commitment h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+    .commitment p { margin: 0 auto; }
+    .commitment-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+    .commitment-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      border: 1px solid rgba(34,197,94,0.25);
+      background: rgba(34,197,94,0.06);
+      color: var(--green);
+    }
+
+    /* ─────────────────────────────────────────────
+       PAGE 5 — SPECS
+    ───────────────────────────────────────────── */
+    #specs {
+      background: linear-gradient(180deg, #060810, var(--bg-deep));
+    }
+    .specs-intro { margin-bottom: 3.5rem; }
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 3rem;
+    }
+    .spec-card {
+      background: var(--bg-glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem 1.5rem;
+      transition: var(--transition);
+      text-align: center;
+    }
+    .spec-card:hover {
+      border-color: rgba(59,130,246,0.3);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    }
+    .spec-emoji { font-size: 2.4rem; margin-bottom: 0.8rem; }
+    .spec-card .spec-value {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+    .spec-card .spec-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .spec-card .spec-explain { font-size: 0.78rem; max-width: none; }
+    .spec-card .spec-use {
+      margin-top: 1rem;
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Final CTA / closing */
+    .closing {
+      margin-top: 4rem;
+      text-align: center;
+      padding: 3rem;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(6,182,212,0.04));
+      border: 1px solid rgba(59,130,246,0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .closing::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background: radial-gradient(ellipse at center, rgba(59,130,246,0.06), transparent 60%);
+      pointer-events: none;
+    }
+    .closing h2 { margin-bottom: 1rem; }
+    .closing p { margin: 0 auto 2rem; font-size: 1rem; }
+    .closing .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* Price tag */
+    .price-box {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(245,158,11,0.25);
+      background: rgba(245,158,11,0.05);
+      margin: 2rem auto;
+    }
+    .price-label { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; text-transform: uppercase; }
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--gold);
+      margin: 0.2rem 0;
+    }
+    .price-sub { font-size: 0.8rem; color: var(--text-2); }
+
+    /* ─────────────────────────────────────────────
+       FOOTER
+    ───────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 2.5rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-3);
+    }
+
+    /* ─────────────────────────────────────────────
+       MOBILE NAV DRAWER
+    ───────────────────────────────────────────── */
+    .nav-drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99;
+      background: rgba(8,10,15,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+    }
+    .nav-drawer.open { display: flex; }
+    .nav-drawer a {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--text-2);
+      transition: color var(--transition);
+    }
+    .nav-drawer a:hover { color: var(--accent); }
+    .drawer-close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--text-2);
+    }
+
+    /* ─────────────────────────────────────────────
+       SCROLL PROGRESS BAR
+    ───────────────────────────────────────────── */
+    #progress-bar {
+      position: fixed;
+      top: 68px; left: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      z-index: 101;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* ─────────────────────────────────────────────
+       RESPONSIVE
+    ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-grid    { grid-template-columns: 1fr; gap: 2.5rem; }
+      .roadmap-track { grid-template-columns: repeat(2, 1fr); }
+      .roadmap-track::before { display: none; }
+      .balance-visual { grid-template-columns: 1fr; }
+      .nav-links    { display: none; }
+      .nav-toggle   { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .roadmap-track { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─────────────────────────────────────────────
+     SCROLL PROGRESS BAR
+───────────────────────────────────────────── -->
+<div id="progress-bar"></div>
+
+<!-- ─────────────────────────────────────────────
+     NAVIGATION
+───────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">Future&#x2009;Invest</div>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#why">The Problem</a></li>
+    <li><a href="#growth">My Growth</a></li>
+    <li><a href="#balance">Balance</a></li>
+    <li><a href="#specs">Specs</a></li>
+  </ul>
+  <div class="nav-toggle" id="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="nav-drawer" id="navDrawer">
+  <span class="drawer-close" id="drawerClose">✕</span>
+  <a href="#home"   onclick="closeDrawer()">Home</a>
+  <a href="#why"    onclick="closeDrawer()">The Problem</a>
+  <a href="#growth" onclick="closeDrawer()">My Growth</a>
+  <a href="#balance"onclick="closeDrawer()">Balance</a>
+  <a href="#specs"  onclick="closeDrawer()">Specs</a>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 1 — HOME / HERO
+═══════════════════════════════════════════ -->
+<section id="home">
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: Copy -->
+      <div>
+        <div class="hero-badge reveal">
+          <span class="dot"></span>
+          A case for smart investment
+        </div>
+
+        <h1 class="hero-title reveal reveal-delay-1">
+          Investing in My&nbsp;<span class="gradient-text">Future</span>,<br>
+          Not Just a Laptop.
+        </h1>
+
+        <p class="hero-sub reveal reveal-delay-2">
+          This is a carefully considered request — not an impulse buy. An upgrade
+          from my current hardware directly enables faster learning, better
+          productivity, and real career-building skills.
+        </p>
+
+        <div class="hero-ctas reveal reveal-delay-3">
+          <a href="#why" class="btn btn-primary">See Why It Matters →</a>
+          <a href="#specs" class="btn btn-ghost">View Specs</a>
+        </div>
+      </div>
+
+      <!-- Right: Comparison cards -->
+      <div class="laptop-compare reveal reveal-delay-2">
+
+        <div class="laptop-card old">
+          <div class="lc-label">Current Laptop — Holding Me Back</div>
+          <div class="lc-name">Generic Budget Laptop</div>
+          <div class="spec-pills">
+            <span class="spec-pill">Intel i3</span>
+            <span class="spec-pill">4 GB RAM</span>
+            <span class="spec-pill">Integrated Graphics</span>
+            <span class="spec-pill">HDD / Slow Storage</span>
+          </div>
+          <!-- Performance bars -->
+          <div class="perf-row">
+            <div class="perf-label"><span>Multitasking</span><span style="color:var(--red)">Poor</span></div>
+            <div class="perf-bar"><div class="perf-fill red" data-width="18%"></div></div>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label"><span>Coding Performance</span><span style="color:var(--red)">Poor</span></div>
+            <div class="perf-bar"><div class="perf-fill red" data-width="15%"></div></div>
+          </div>
+        </div>
+
+        <div class="vs-badge">VS</div>
+
+        <div class="laptop-card new">
+          <div class="lc-label">HP Victus 15 — Built for Growth</div>
+          <div class="lc-name">HP Victus 15 · RTX 4050</div>
+          <div class="spec-pills">
+            <span class="spec-pill">Intel i5</span>
+            <span class="spec-pill">16 GB RAM</span>
+            <span class="spec-pill">RTX 4050 GPU</span>
+            <span class="spec-pill">SSD Storage</span>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label"><span>Multitasking</span><span style="color:var(--accent)">Excellent</span></div>
+            <div class="perf-bar"><div class="perf-fill blue" data-width="92%"></div></div>
+          </div>
+          <div class="perf-row">
+            <div class="perf-label"><span>Coding Performance</span><span style="color:var(--accent)">Excellent</span></div>
+            <div class="perf-bar"><div class="perf-fill blue" data-width="89%"></div></div>
+          </div>
+        </div>
+
+      </div><!-- /laptop-compare -->
+    </div><!-- /hero-grid -->
+  </div><!-- /container -->
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 2 — WHY UPGRADE
+═══════════════════════════════════════════ -->
+<section id="why">
+  <div class="container">
+    <div class="why-header">
+      <p class="section-label reveal">The Problem</p>
+      <h2 class="reveal reveal-delay-1">My Current Laptop Is <span class="gradient-text">a Barrier</span></h2>
+      <p class="reveal reveal-delay-2" style="margin-top:0.8rem; font-size:1rem;">
+        Every day, my weak hardware creates real friction that slows down learning,
+        kills focus, and limits what I can build. These are not complaints — they are
+        documented limitations with measurable consequences.
+      </p>
+    </div>
+
+    <!-- Problem cards -->
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">🐌</div>
+        <h3>Severe RAM Bottleneck</h3>
+        <p>4 GB RAM is below the minimum for modern development. Opening VS Code, a browser with a few tabs, and Node.js simultaneously causes constant freezing and crashes.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-1">
+        <div class="problem-icon">🔥</div>
+        <h3>CPU Cannot Keep Up</h3>
+        <p>The Intel i3 struggles with compilation, running local servers, or any CPU-intensive task. Build times stretch from seconds to minutes, breaking concentration and flow.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-2">
+        <div class="problem-icon">📉</div>
+        <h3>No GPU — No AI/ML Work</h3>
+        <p>Integrated graphics cannot accelerate machine learning tasks, data visualisation, or even smooth video rendering. Entire career pathways are locked behind this limitation.</p>
+      </div>
+      <div class="problem-card reveal reveal-delay-3">
+        <div class="problem-icon">⏳</div>
+        <h3>Time Lost Daily</h3>
+        <p>Boot times, app loading, and browser lag together waste 30–60 minutes every day. Over a year, that is hundreds of hours of lost productive time.</p>
+      </div>
+    </div>
+
+    <!-- Real-life timeline -->
+    <div class="scenario-section reveal">
+      <h3>A Typical Day on My Current Laptop</h3>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="ti-time">Afternoon — 3:00 AM</div>
+          <h4>Laptop takes 4–5 minutes to boot</h4>
+          <p>RIght after school i want to get my work done feeling productive but before any work even begins, time and motivation are already drained waiting for the system to become usable.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="ti-time">Study Session — 4:00 AM</div>
+          <h4>Opening VS Code + Chrome = System Freeze</h4>
+          <p>Running a code editor alongside a browser tutorial causes RAM to max out. The fan roars, the cursor lags, and eventually a forced restart loses unsaved work.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="ti-time">Project Work — 5:00 AM</div>
+          <h4>pip install crashes the system</h4>
+          <p>Installing dependencies for a Python project exhausts available memory. The laptop freezes mid-install, requiring a full restart and starting over.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="ti-time">Evening — 9:00 PM</div>
+          <h4>Cannot run a local development server</h4>
+          <p>Testing my own web project requires running a local server alongside the browser — an impossible task for 4 GB RAM. Learning grinds to a halt.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-row">
+      <div class="stat-box reveal">
+        <span class="stat-num" data-count="4">0</span>
+        <span class="stat-label">GB RAM — minimum is 8 GB for basic dev work</span>
+      </div>
+      <div class="stat-box reveal reveal-delay-1">
+        <span class="stat-num" data-count="60">0</span>
+        <span class="stat-label">minutes of productive time lost daily to lag</span>
+      </div>
+      <div class="stat-box reveal reveal-delay-2">
+        <span class="stat-num" data-count="0">0</span>
+        <span class="stat-label">GPU capability — zero acceleration for modern tools</span>
+      </div>
+      <div class="stat-box reveal reveal-delay-3">
+        <span class="stat-num" data-count="365">0</span>
+        <span class="stat-label">days per year this friction compounds and holds me back</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 3 — HOW THIS HELPS ME GROW
+═══════════════════════════════════════════ -->
+<section id="growth">
+  <div class="container">
+    <div class="growth-intro">
+      <p class="section-label reveal">My Growth</p>
+      <h2 class="reveal reveal-delay-1">What I Can <span class="gradient-text">Build and Learn</span> With the Right Tool</h2>
+      <p class="reveal reveal-delay-2" style="margin-top:0.8rem; font-size:1rem;">
+        The HP Victus 15 is not a luxury. It is the minimum capable hardware
+        for the skills I am actively developing — skills with genuine career value.
+      </p>
+    </div>
+
+    <!-- Use case cards -->
+    <div class="use-case-grid">
+      <div class="use-card reveal">
+        <div class="use-icon">💻</div>
+        <h3>Full-Stack Web Development</h3>
+        <p>Running a front-end dev server, back-end API, and database simultaneously requires at least 8–16 GB RAM. I can finally work the way professional developers work.</p>
+        <div class="tag-list">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">Docker</span>
+        </div>
+      </div>
+
+      <div class="use-card reveal reveal-delay-1">
+        <div class="use-icon">🤖</div>
+        <h3>Artificial Intelligence & ML</h3>
+        <p>The RTX 4050 GPU enables CUDA-accelerated machine learning training — a skill that is rapidly becoming essential in every technology field.</p>
+        <div class="tag-list">
+          <span class="tag">Python</span>
+          <span class="tag">TensorFlow</span>
+          <span class="tag">PyTorch</span>
+          <span class="tag">CUDA</span>
+        </div>
+      </div>
+
+      <div class="use-card reveal reveal-delay-2">
+        <div class="use-icon">☁️</div>
+        <h3>Cloud & DevOps Skills</h3>
+        <p>Running virtual machines and containers locally is impossible on 4 GB RAM. With 16 GB, I can practice industry-standard DevOps workflows before entering the workforce.</p>
+        <div class="tag-list">
+          <span class="tag">AWS</span>
+          <span class="tag">Linux VMs</span>
+          <span class="tag">Git CI/CD</span>
+          <span class="tag">Kubernetes</span>
+        </div>
+      </div>
+
+      <div class="use-card reveal reveal-delay-3">
+        <div class="use-icon">🎨</div>
+        <h3>UI/UX Design & Prototyping</h3>
+        <p>Design tools like Figma, Blender, and After Effects require significant RAM and GPU resources. These creative skills complement coding and open additional career paths.</p>
+        <div class="tag-list">
+          <span class="tag">Figma</span>
+          <span class="tag">Blender</span>
+          <span class="tag">Premiere</span>
+        </div>
+      </div>
+
+      <div class="use-card reveal reveal-delay-1">
+        <div class="use-icon">📊</div>
+        <h3>Data Science & Analysis</h3>
+        <p>Processing real datasets in Jupyter Notebooks, running Pandas operations, and visualising results with Matplotlib — all demand more than 4 GB RAM to run without crashes.</p>
+        <div class="tag-list">
+          <span class="tag">Pandas</span>
+          <span class="tag">Jupyter</span>
+          <span class="tag">NumPy</span>
+          <span class="tag">Matplotlib</span>
+        </div>
+      </div>
+
+      <div class="use-card reveal reveal-delay-2">
+        <div class="use-icon">🔐</div>
+        <h3>Cybersecurity & Networking</h3>
+        <p>Running Kali Linux in a VM, setting up home lab environments, and learning ethical hacking requires isolated virtual machines — a 16 GB RAM use case I can finally explore.</p>
+        <div class="tag-list">
+          <span class="tag">Kali Linux</span>
+          <span class="tag">Wireshark</span>
+          <span class="tag">VirtualBox</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Career roadmap -->
+    <div class="roadmap reveal">
+      <h3>My Career Trajectory</h3>
+      <div class="roadmap-track">
+        <div class="roadmap-step">
+          <div class="step-dot"></div>
+          <div class="step-title">Now</div>
+          <div class="step-desc">Learning foundations — blocked by hardware</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="step-dot"></div>
+          <div class="step-title">1st Month</div>
+          <div class="step-desc">First real projects, portfolio building</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="step-dot"></div>
+          <div class="step-title">6 Months</div>
+          <div class="step-desc">Freelance work or internship opportunities</div>
+        </div>
+        <div class="roadmap-step">
+          <div class="step-dot"></div>
+          <div class="step-title">2+ Years</div>
+          <div class="step-desc">Professional career, laptop paid for many times over</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote -->
+    <div class="quote-block reveal">
+      <p>"Give me a tool equal to my task — remove the hardware ceiling and watch what I can build."</p>
+      <div class="quote-attr">— The mindset behind this request</div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 4 — BALANCE (Addressing Concerns)
+═══════════════════════════════════════════ -->
+<section id="balance">
+  <div class="container">
+    <div class="balance-intro">
+      <p class="section-label reveal">Addressing Concerns</p>
+      <h2 class="reveal reveal-delay-1">Honest About <span class="gradient-text">Balance</span></h2>
+      <p class="reveal reveal-delay-2" style="margin-top:0.8rem; font-size:1rem;">
+        I understand the concern. A capable GPU sounds like it is for gaming.
+        Here is a transparent, honest breakdown of how I intend to use this machine —
+        and why the GPU serves learning far more than leisure.
+      </p>
+    </div>
+
+    <!-- Pie chart + points -->
+    <div class="balance-visual">
+      <div class="pie-wrap reveal">
+        <div class="pie"></div>
+        <div class="pie-legend" style="max-width:220px;">
+          <div class="pie-legend-item">
+            <div class="legend-dot" style="background:var(--accent)"></div>
+            <span style="color:var(--text-1)">75% — Work, Learning & Projects</span>
+          </div>
+          <div class="pie-legend-item">
+            <div class="legend-dot" style="background:#1e293b; border:1px solid var(--border)"></div>
+            <span>10% — Creative work (design, video)</span>
+          </div>
+          <div class="pie-legend-item">
+            <div class="legend-dot" style="background:var(--green)"></div>
+            <span style="color:var(--text-2)">15% — Casual games (earned downtime)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="balance-points">
+        <div class="balance-point reveal">
+          <div class="bp-icon">✅</div>
+          <div class="bp-content">
+            <h4>Yes — it can play Minecraft and similar games</h4>
+            <p>I will not pretend otherwise. But a capable GPU is also required for machine learning, 3D rendering, and video editing — professional tools, not toys.</p>
+          </div>
+        </div>
+        <div class="balance-point reveal reveal-delay-1">
+          <div class="bp-icon">📅</div>
+          <div class="bp-content">
+            <h4>I have a time management plan</h4>
+            <p>Study sessions and project work happen before any leisure. The laptop comes with responsibility, not just capability.</p>
+          </div>
+        </div>
+        <div class="balance-point reveal reveal-delay-2">
+          <div class="bp-icon">📈</div>
+          <div class="bp-content">
+            <h4>Performance = Motivation to achieve more</h4>
+            <p>When tools work smoothly, learning flows naturally. Removing friction is the fastest way to increase the time I am willing to spend studying.</p>
+          </div>
+        </div>
+        <div class="balance-point reveal reveal-delay-3">
+          <div class="bp-icon">🏆</div>
+          <div class="bp-content">
+            <h4>This replaces my old laptop — not adds to it</h4>
+            <p>One device, used responsibly, for the next 4–5 years. This is not accumulating gadgets; it is replacing a broken tool with a capable one.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Commitment block -->
+    <div class="commitment reveal">
+      <h3>My Personal Commitments</h3>
+      <p>This is not just a purchase request. It comes with accountability.</p>
+      <div class="commitment-items">
+        <div class="commitment-item">✓ Complete 1-2 coding project per month</div>
+        <div class="commitment-item">✓ Maintain academic performance</div>
+        <div class="commitment-item">✓ Limit gaming to 1-hour on weekdays and 2 hours on weekends</div>
+        <div class="commitment-item">✓ Show monthly progress updates</div>
+        <div class="commitment-item">✓ Treat this as a 5-year investment</div>
+        <div class="commitment-item">✓ Apply skills toward future income</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══════════════════════════════════════════
+     PAGE 5 — LAPTOP SPECS OVERVIEW
+═══════════════════════════════════════════ -->
+<section id="specs">
+  <div class="container">
+    <div class="specs-intro">
+      <p class="section-label reveal">The Machine</p>
+      <h2 class="reveal reveal-delay-1">HP Victus 15 — <span class="gradient-text">What Each Part Does</span></h2>
+      <p class="reveal reveal-delay-2" style="margin-top:0.8rem; font-size:1rem;">
+        In plain language — no jargon. Here is exactly what each component is, what it does, and why it matters for productivity, not gaming.
+      </p>
+    </div>
+
+    <!-- Spec cards -->
+    <div class="spec-grid">
+      <div class="spec-card reveal">
+        <div class="spec-emoji">⚡</div>
+        <div class="spec-value">i5</div>
+        <div class="spec-name">Intel Core i5 Processor</div>
+        <p class="spec-explain">The brain of the laptop. The i5 handles multiple tasks at once without slowing down — running a code editor, browser, and server simultaneously with ease.</p>
+        <div class="spec-use">→ Faster compilation, smoother multitasking</div>
+      </div>
+
+      <div class="spec-card reveal reveal-delay-1">
+        <div class="spec-emoji">🧠</div>
+        <div class="spec-value">16 GB</div>
+        <div class="spec-name">RAM (System Memory)</div>
+        <p class="spec-explain">Think of RAM as your workspace desk. More RAM means more apps can stay "open on the desk" at once. My current 4 GB is like a tiny desk where everything falls off.</p>
+        <div class="spec-use">→ No more crashes, real dev environment possible</div>
+      </div>
+
+      <div class="spec-card reveal reveal-delay-2">
+        <div class="spec-emoji">🎯</div>
+        <div class="spec-value">RTX 4050</div>
+        <div class="spec-name">NVIDIA Graphics Card</div>
+        <p class="spec-explain">Modern GPUs are not just for games. The RTX 4050 accelerates AI model training, video editing, 3D rendering, and any task that benefits from parallel processing — core to many tech careers.</p>
+        <div class="spec-use">→ Enables AI/ML, data science, creative work</div>
+      </div>
+
+      <div class="spec-card reveal reveal-delay-3">
+        <div class="spec-emoji">💾</div>
+        <div class="spec-value">SSD</div>
+        <div class="spec-name">Solid State Drive</div>
+        <p class="spec-explain">An SSD stores everything 5–10× faster than an old spinning hard drive. Boot in under 10 seconds, open large files instantly, and never lose work to a slow save.</p>
+        <div class="spec-use">→ Fast boot, instant app launch, reliable storage</div>
+      </div>
+
+      <div class="spec-card reveal">
+        <div class="spec-emoji">🖥️</div>
+        <div class="spec-value">15.6"</div>
+        <div class="spec-name">Full HD Display</div>
+        <p class="spec-explain">A 1080p screen large enough to comfortably have code on one side and documentation on the other — standard workflow for any developer.</p>
+        <div class="spec-use">→ Comfortable split-screen, reduced eye strain</div>
+      </div>
+
+      <div class="spec-card reveal reveal-delay-1">
+        <div class="spec-emoji">🔋</div>
+        <div class="spec-value">Good</div>
+        <div class="spec-name">Battery & Portability</div>
+        <p class="spec-explain">The Victus 15 is designed to be portable enough for study sessions away from home — libraries, coffee shops, or anywhere inspiration strikes.</p>
+        <div class="spec-use">→ Study anywhere, not desk-locked</div>
+      </div>
+    </div>
+
+    <!-- Price display -->
+    <div style="text-align:center;" class="reveal">
+      <div class="price-box" style="display:inline-flex;">
+        <span class="price-label">Investment Amount</span>
+        <span class="price-amount">~AED 2,800</span>
+        <span class="price-sub">One-time purchase · 4–5 year lifespan · &lt; AED 560 per year</span>
+      </div>
+    </div>
+
+    <!-- Closing CTA -->
+    <div class="closing reveal">
+      <h2>This Is Not Just a Laptop.</h2>
+      <p>It is the removal of the one barrier standing between me and genuine career skills. Every hour I spend on this machine is an hour invested in my future.</p>
+      <div class="btn-group">
+        <a href="#why" class="btn btn-primary">Review the Problem →</a>
+        <a href="#growth" class="btn btn-ghost">See My Growth Plan</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────────────────────────────────────
+     FOOTER
+───────────────────────────────────────────── -->
+<footer>
+  <p>Prepared with care and honesty · A case for smart, responsible investment · HP Victus 15 RTX 4050</p>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+  // ─────────────────────────────────────────────
+  // 1. SCROLL PROGRESS BAR
+  // ─────────────────────────────────────────────
+  const progressBar = document.getElementById('progress-bar');
+  window.addEventListener('scroll', () => {
+    const scrollTop  = document.documentElement.scrollTop;
+    const scrollMax  = document.documentElement.scrollHeight - window.innerHeight;
+    const pct        = (scrollTop / scrollMax) * 100;
+    progressBar.style.width = pct + '%';
+  });
+
+  // ─────────────────────────────────────────────
+  // 2. INTERSECTION OBSERVER — REVEAL ANIMATION
+  // ─────────────────────────────────────────────
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer  = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Animate performance bars when parent section enters view
+        const fills = entry.target.querySelectorAll('.perf-fill[data-width]');
+        fills.forEach(fill => { fill.style.width = fill.dataset.width; });
+        // Animate count-up numbers
+        const countEls = entry.target.querySelectorAll('[data-count]');
+        countEls.forEach(el => animateCount(el));
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // Also animate bars in laptop-card (which is inside a reveal parent)
+  window.addEventListener('scroll', () => {
+    document.querySelectorAll('.perf-fill[data-width]').forEach(fill => {
+      const rect = fill.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        fill.style.width = fill.dataset.width;
+      }
+    });
+  }, { passive: true });
+
+  // ─────────────────────────────────────────────
+  // 3. COUNT-UP ANIMATION
+  // ─────────────────────────────────────────────
+  function animateCount(el) {
+    const target   = parseInt(el.dataset.count, 10);
+    const duration = 1200;
+    const start    = Date.now();
+    const startVal = 0;
+
+    function update() {
+      const elapsed = Date.now() - start;
+      const progress = Math.min(elapsed / duration, 1);
+      // easeOutQuart
+      const ease = 1 - Math.pow(1 - progress, 4);
+      el.textContent = Math.round(startVal + ease * (target - startVal));
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    update();
+  }
+
+  // Observe stat numbers separately (they're not always in .reveal)
+  const statNums = document.querySelectorAll('.stat-num[data-count]');
+  const numObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        numObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  statNums.forEach(el => numObserver.observe(el));
+
+  // ─────────────────────────────────────────────
+  // 4. MOBILE NAV DRAWER
+  // ─────────────────────────────────────────────
+  const toggle  = document.getElementById('navToggle');
+  const drawer  = document.getElementById('navDrawer');
+  const close   = document.getElementById('drawerClose');
+
+  toggle.addEventListener('click', () => drawer.classList.add('open'));
+  close.addEventListener ('click', closeDrawer);
+  function closeDrawer() { drawer.classList.remove('open'); }
+
+  // ─────────────────────────────────────────────
+  // 5. ACTIVE NAV LINK highlighting based on scroll
+  // ─────────────────────────────────────────────
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current
+        ? 'var(--text-1)' : '';
+    });
+  }, { passive: true });
+
+  // ─────────────────────────────────────────────
+  // 6. PERFORMANCE BARS — initial trigger on load
+  //    (for bars already in viewport)
+  // ─────────────────────────────────────────────
+  window.addEventListener('load', () => {
+    // Trigger visible elements immediately
+    document.querySelectorAll('.reveal').forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  });
+</script>
+
+</body>
+</html>
